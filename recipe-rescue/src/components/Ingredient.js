@@ -1,10 +1,21 @@
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { removeIngredient } from '../features/ingredients/ingredientsSlice';
+
 function Ingredient(props){
-    const {name} = props;
+    const {name, state, dispatch} = props;
+
+    const handleClick = () => {
+        dispatch(removeIngredient(name));
+    }
 
     return (
-        <div className="ingredient">
-            <h3>{name}</h3>
-        </div>
+        <Card>
+            <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <Button variant='danger' size='sm' onClick={handleClick}>X</Button>
+            </Card.Body>
+        </Card>
     )
 }
 

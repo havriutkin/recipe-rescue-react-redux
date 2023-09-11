@@ -1,6 +1,7 @@
-import { Col, Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { addIngredient } from '../features/ingredients/ingredientsSlice';
+import { formatInput } from '../utils/utils';
 
 function SearchBar({state, dispatch}){
     const [inputText, setInputText] = useState('');
@@ -10,7 +11,7 @@ function SearchBar({state, dispatch}){
     }
 
     const handleClick = (event) => {
-        dispatch(addIngredient(inputText));
+        dispatch(addIngredient(formatInput(inputText)));
         setInputText('');
     }
 
