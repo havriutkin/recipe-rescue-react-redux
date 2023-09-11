@@ -9,11 +9,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 // Components imports
 import Home from '../pages/Home';
+import Recipes from '../pages/Recipes';
 
 
 function App({state, dispatch}) {
     const appRouter = createBrowserRouter(createRoutesFromElements(
-      <Route path='/' element={<Home state={state} dispatch={dispatch}/>}/>
+      <>
+        <Route path='/' element={<Home state={state} dispatch={dispatch}/>}/>
+        <Route path='/recipes' element={<Recipes state={state} dispatch={dispatch}/>}/>
+      </>
     ));
 
     return (

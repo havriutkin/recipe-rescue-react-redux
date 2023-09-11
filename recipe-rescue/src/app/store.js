@@ -3,9 +3,11 @@ import { combineReducers } from 'redux';
 
 // Reducers imports
 import { ingredientsReducer } from '../features/ingredients/ingredientsSlice';
+import { recipesReducer } from '../features/recipes/recipesSlice';
 
 const reducers = {
-    ingredients: ingredientsReducer
+    ingredients: ingredientsReducer,
+    recipes: recipesReducer
 }
 
 const rootReducer = combineReducers(reducers);
